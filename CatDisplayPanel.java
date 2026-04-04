@@ -243,11 +243,31 @@ public class CatDisplayPanel extends JPanel {
         }
     }
 
+    //draw WitchHat component
+    public class WitchHat {
+        Rectangle rect;
+        int[] triPointX = {catx + 120, catx + 40, catx + 200};
+        int[] triPointY = {caty - 100, caty + 50, caty + 50};
+        Triangle tri;
+        public WitchHat() {
+            rect = new Rectangle(catx , caty + 50, 240, 5, black56);
+            tri = new Triangle(triPointX, triPointY, black56);
+        }
+        public void draw(Graphics g) {
+            rect.draw(g);
+            tri.draw(g);
+        }
+    }
+
+    //
+
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
         new Cat().draw(g);
+        new WitchHat().draw(g);
 
         //update for Birthday
         if (selectedHat != null && selectedHat.equals("Party Hat")) {
