@@ -259,15 +259,28 @@ public class CatDisplayPanel extends JPanel {
         }
     }
 
-    //
+    //draw Cape component
+    public class Cape {
+        int[] triPointX = {catx + 120, catx - 90, catx + 320};
+        int[] triPointY = {caty + 40, caty + 320, caty + 320};
+        Triangle tri;
+        public Cape() {
+            tri = new Triangle(triPointX, triPointY, black56);
+        }
+        public void draw(Graphics g) {
+            tri.draw(g);
+        }
+    }
 
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        new Cape().draw(g);    
         new Cat().draw(g);
         new WitchHat().draw(g);
+        
 
         //update for Birthday
         if (selectedHat != null && selectedHat.equals("Party Hat")) {
