@@ -43,7 +43,7 @@ public class AccessoryPanel extends JPanel{
         this.setLayout(new GridLayout(3,1));
 
         //default accessory
-        bowButton.setSelected(true);
+        // bowButton.setSelected(true);
     }
     
     //getSelectedAccessory() method -> returns the selected hat
@@ -51,6 +51,24 @@ public class AccessoryPanel extends JPanel{
         if (bowButton.isSelected()) return "Bow";
         else if (scarfButton.isSelected()) return "Scarf";
         else if (capeButton.isSelected()) return "Cape";
-        return "";
+        return null;
+    }
+
+    public JRadioButton getBowButton() {
+            return bowButton;
+        }
+
+    public JRadioButton getScarfButton() {
+        return scarfButton;
+    }
+
+    public JRadioButton getCapeButton() {
+        return capeButton;
+    }
+
+    //method to clear selection
+
+    public void clearSelection() {
+        accessoryGroup.clearSelection();
     }
 }

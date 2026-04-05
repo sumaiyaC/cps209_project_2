@@ -43,14 +43,31 @@ public class BackgroundPanel extends JPanel{
         this.setLayout(new GridLayout(3,1));
 
         //default background
-        winterBgButton.setSelected(true);
+        // winterBgButton.setSelected(true);
     }
     
     //getSelectedAccessory() method -> returns the selected hat
-    public String getSelectedAccessory() {
+    public String getSelectedBackground() {
         if (birthdayBgButton.isSelected()) return "Birthday";
         else if (winterBgButton.isSelected()) return "Winter";
         else if (halloweenBgButton.isSelected()) return "Halloween";
-        return "";
+        return null;
+    }
+
+    public JRadioButton getBirthdayButton() {
+            return birthdayBgButton;
+        }
+
+    public JRadioButton getWinterButton() {
+        return winterBgButton;
+    }
+
+    public JRadioButton getHalloweenButton() {
+        return halloweenBgButton;
+    }
+
+    //method to clear selection
+    public void clearSelection() {
+        backgroundGroup.clearSelection();
     }
 }

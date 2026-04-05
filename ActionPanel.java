@@ -16,16 +16,19 @@ import javax.swing.JPanel;
 
 public class ActionPanel extends JPanel{
     //instance variables
-    private JButton checkOutfit;
+    private JButton checkOutfitButton;
 
     public ActionPanel() {
         this.setBackground(new Color(240, 255, 240));
         this.setBorder(BorderFactory.createTitledBorder("Action Panel"));
         this.setLayout(new FlowLayout(FlowLayout.CENTER));
 
-        checkOutfit = new JButton("Check Outfit!");
-        checkOutfit.setPreferredSize(new Dimension(250, 40));
+        checkOutfitButton = new JButton("Check Outfit!");
+        checkOutfitButton.setPreferredSize(new Dimension(250, 40));
 
-        this.add(checkOutfit);
+        this.add(checkOutfitButton);
     }
+    public JButton getCheckButton() {
+        return checkOutfitButton;
+    }   
 }

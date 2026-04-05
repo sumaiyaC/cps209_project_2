@@ -32,7 +32,7 @@ public class HatPanel extends JPanel{
         this.setLayout(new GridLayout(3,1));
 
         //default hat
-        partyHatButton.setSelected(true);
+        // partyHatButton.setSelected(true);
     }
 
     //getSelectedHat() method -> returns the selected hat
@@ -40,6 +40,22 @@ public class HatPanel extends JPanel{
         if (partyHatButton.isSelected()) return "Party Hat";
         else if (beanieHatButton.isSelected()) return "Beanie Hat";
         else if (witchHatButton.isSelected()) return "Witch Hat";
-        return "";
+        return null;
+    }
+    public JRadioButton getPartyHatButton() {
+            return partyHatButton;
+        }
+
+    public JRadioButton getBeanieButton() {
+        return beanieHatButton;
+    }
+
+    public JRadioButton getWitchHatButton() {
+        return witchHatButton;
+    }
+
+    //method to clear selection
+    public void clearSelection() {
+        hatGroup.clearSelection();
     }
 }

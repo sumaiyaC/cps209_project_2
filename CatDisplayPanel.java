@@ -32,11 +32,12 @@ public class CatDisplayPanel extends JPanel {
     public CatDisplayPanel() {
         this.setPreferredSize(new Dimension(500, 700));
         this.setBackground(new Color(255, 248, 220));
-        this.setBorder(BorderFactory.createTitledBorder("Cat Display Panel"));
+        this.setBorder(BorderFactory.createTitledBorder(""));
         birthdayBg = new ImageIcon(getClass().getResource("birthday.png")).getImage();
         winterBg = new ImageIcon(getClass().getResource("winter.png")).getImage();
         halloweenBg = new ImageIcon(getClass().getResource("halloween.png")).getImage();
     }
+    
     public void setSelectedHat(String hat) {
         this.selectedHat = hat;
         repaint(); 
@@ -284,6 +285,7 @@ public class CatDisplayPanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        // 1. background
         if (selectedBackground != null) {
             switch (selectedBackground) {
                 case "Birthday":
@@ -298,24 +300,15 @@ public class CatDisplayPanel extends JPanel {
             }
         }
 
-        new Cat().draw(g);
-
-        //hat switch
-        if (selectedHat != null) {
-            switch (selectedHat) {
-                case "Party Hat":
-                    new PartyHat().draw(g);
-                    break;
-                case "Beanie":
-                    new Beanie().draw(g);
-                    break;
-                case "Witch Hat":
-                    new WitchHat().draw(g);
-                    break;
-            }
+        // 2. back layer accessory
+        if (selectedAccessory != null && selectedAccessory.equals("Cape")) {
+            new Cape().draw(g);
         }
 
-        //accessory switch
+        // 3. cat
+        new Cat().draw(g);
+
+        // 4. front layer accessories
         if (selectedAccessory != null) {
             switch (selectedAccessory) {
                 case "Bow":
@@ -324,12 +317,24 @@ public class CatDisplayPanel extends JPanel {
                 case "Scarf":
                     new Scarf().draw(g);
                     break;
-                case "Cape":
-                    new Cape().draw(g);
+            }
+        }
+
+        // 5. hat
+        if (selectedHat != null) {
+            switch (selectedHat) {
+                case "Party Hat":
+                    new PartyHat().draw(g);
+                    break;
+                case "Beanie Hat":
+                    new Beanie().draw(g);
+                    break;
+                case "Witch Hat":
+                    new WitchHat().draw(g);
                     break;
             }
         }
-        
+
     }
     
 }
