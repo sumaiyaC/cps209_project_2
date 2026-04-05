@@ -3,7 +3,10 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
+
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -16,17 +19,23 @@ Purpose:
 public class CatDisplayPanel extends JPanel {
     //instance variables
     JLabel catLabel;
-    public Color black56 = new Color(56, 56, 56);
-    public int catx = 140, caty = 130;
+    private Color black56 = new Color(56, 56, 56);
+    private int catx = 140, caty = 130;
     private String selectedHat;
     private String selectedAccessory;
     private String selectedBackground;
+    private Image birthdayBg;
+    private Image winterBg;
+    private Image halloweenBg;
 
 
     public CatDisplayPanel() {
         this.setPreferredSize(new Dimension(500, 700));
         this.setBackground(new Color(255, 248, 220));
         this.setBorder(BorderFactory.createTitledBorder("Cat Display Panel"));
+        birthdayBg = new ImageIcon(getClass().getResource("birthday.png")).getImage();
+        winterBg = new ImageIcon(getClass().getResource("winter.png")).getImage();
+        halloweenBg = new ImageIcon(getClass().getResource("halloween.png")).getImage();
     }
     public void setSelectedHat(String hat) {
         this.selectedHat = hat;
@@ -61,8 +70,6 @@ public class CatDisplayPanel extends JPanel {
             g2d.setColor(black56);
             g2d.setStroke(new BasicStroke(5));
             g2d.drawOval(this.x, this.y, this.width, this.height);
-
-            
         }
     }
 
@@ -277,24 +284,51 @@ public class CatDisplayPanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        new Cape().draw(g);    
-        new Cat().draw(g);
-        new WitchHat().draw(g);
-        
+        if (selectedBackground != null) {
+            switch (selectedBackground) {
+                case "Birthday":
+                    g.drawImage(birthdayBg, 0, 0, getWidth(), getHeight(), this);
+                    break;
+                case "Winter":
+                    g.drawImage(winterBg, 0, 0, getWidth(), getHeight(), this);
+                    break;
+                case "Halloween":
+                    g.drawImage(halloweenBg, 0, 0, getWidth(), getHeight(), this);
+                    break;
+            }
+        }
 
-        //update for Birthday
-        if (selectedHat != null && selectedHat.equals("Party Hat")) {
-            new PartyHat().draw(g);;
+        new Cat().draw(g);
+
+        //hat switch
+        if (selectedHat != null) {
+            switch (selectedHat) {
+                case "Party Hat":
+                    new PartyHat().draw(g);
+                    break;
+                case "Beanie":
+                    new Beanie().draw(g);
+                    break;
+                case "Witch Hat":
+                    new WitchHat().draw(g);
+                    break;
+            }
         }
-        if (selectedAccessory != null && selectedAccessory.equals("Bow")) {
-            new Bow().draw(g);
+
+        //accessory switch
+        if (selectedAccessory != null) {
+            switch (selectedAccessory) {
+                case "Bow":
+                    new Bow().draw(g);
+                    break;
+                case "Scarf":
+                    new Scarf().draw(g);
+                    break;
+                case "Cape":
+                    new Cape().draw(g);
+                    break;
+            }
         }
-        if (selectedBackground != null && selectedBackground.equals("Birthday")) {
-            //change background
-            new PartyHat().draw(g);;
-        }
-        
-        //might be easier to create switch case sytem for accessory, hat, and background?
         
     }
     

@@ -16,7 +16,7 @@ public class EventPanel extends JPanel{
         this.setPreferredSize(new Dimension(500, 50));
         this.setBackground(new Color(255, 214, 214));
         this.setBorder(BorderFactory.createTitledBorder("Event Panel"));
-        eventLabel = new JLabel("Dress your cat for: Birthday");
+        eventLabel = new JLabel("Dress your cat for: ");
         this.add(eventLabel);
 
         
