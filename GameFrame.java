@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.util.Random;
+
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -53,7 +55,7 @@ public class GameFrame extends JFrame {
 
         // Main frame layout
         this.setLayout(new FlowLayout(FlowLayout.CENTER, 30, 30));
-        this.getContentPane().setBackground(new Color(245, 230, 215));
+        this.getContentPane().setBackground(new Color(255,254,246));
 
         // LEFT SIDE PANEL
         leftPanel = new JPanel();
@@ -72,6 +74,8 @@ public class GameFrame extends JFrame {
 
         // CONTROL PANEL
         controlPanel = new ControlPanel();
+        controlPanel.setBackground(new Color(174, 180, 155));
+        controlPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         // Instructions panel placeholder
         instructionsPanel = new InstructionsPanel();

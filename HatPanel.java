@@ -13,8 +13,8 @@ public class HatPanel extends JPanel{
     private ButtonGroup hatGroup;
 
     public HatPanel() {
-        this.setBackground(new Color(255, 228, 225));
-        this.setBorder(BorderFactory.createTitledBorder("Hat Panel"));
+        this.setBackground(new Color(202, 209, 180));
+        this.setBorder(BorderFactory.createTitledBorder("Choose the right hat"));
 
         partyHatButton = new JRadioButton("Party Hat");
         beanieHatButton = new JRadioButton("Beanie");

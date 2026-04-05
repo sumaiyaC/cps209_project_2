@@ -1,3 +1,7 @@
+import java.awt.Font;
+
+import javax.swing.UIManager;
+
 public class Project2Runner {
     
     /*
@@ -35,7 +39,7 @@ public class Project2Runner {
      * and the line numbers that these listeners are defined in.
      */
 
-    public static void main(String[] args) {
-        new GameFrame();
-    }
+public static void main(String[] args) {
+    new GameFrame();
+}
 }

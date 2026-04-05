@@ -25,8 +25,8 @@ public class BackgroundPanel extends JPanel{
     private ButtonGroup backgroundGroup;
 
     public BackgroundPanel() {
-        this.setBackground(new Color(224, 255, 255));
-        this.setBorder(BorderFactory.createTitledBorder("Background Panel"));
+        this.setBackground(new Color(202, 209, 180));
+        this.setBorder(BorderFactory.createTitledBorder("Choose the right background"));
         birthdayBgButton = new JRadioButton("Birthday");
         winterBgButton = new JRadioButton("Winter");
         halloweenBgButton = new JRadioButton("Halloween");

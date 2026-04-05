@@ -4,8 +4,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -31,13 +29,13 @@ public class CatDisplayPanel extends JPanel {
 
     public CatDisplayPanel() {
         this.setPreferredSize(new Dimension(500, 700));
-        this.setBackground(new Color(255, 248, 220));
-        this.setBorder(BorderFactory.createTitledBorder(""));
+        this.setBackground(new Color(246, 245, 235));
+        //this.setBorder(BorderFactory.createLineBorder(black56, 1));
         birthdayBg = new ImageIcon(getClass().getResource("birthday.png")).getImage();
         winterBg = new ImageIcon(getClass().getResource("winter.png")).getImage();
         halloweenBg = new ImageIcon(getClass().getResource("halloween.png")).getImage();
     }
-    
+
     public void setSelectedHat(String hat) {
         this.selectedHat = hat;
         repaint(); 

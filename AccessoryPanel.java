@@ -25,8 +25,8 @@ public class AccessoryPanel extends JPanel{
     private ButtonGroup accessoryGroup;
     
     public AccessoryPanel() {
-        this.setBackground(new Color(230, 230, 250));
-        this.setBorder(BorderFactory.createTitledBorder("Accessory Panel"));
+        this.setBackground(new Color(202, 209, 180));
+        this.setBorder(BorderFactory.createTitledBorder("Choose the right accessory"));
         bowButton = new JRadioButton("Bow");
         scarfButton = new JRadioButton("Scarf");
         capeButton = new JRadioButton("Cape");
